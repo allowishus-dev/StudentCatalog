@@ -1,0 +1,41 @@
+﻿@model StudentCatalogFresh.Models.Student
+
+<div class="form-inline">
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(s => s.Firstname)
+        </div>
+        <div>
+            @Html.TextBoxFor(s => s.Firstname, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group left-padding">
+        <div>
+            @Html.LabelFor(s => s.Lastname)
+        </div>
+        <div>
+            @Html.TextBoxFor(s => s.Lastname, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+
+<div class="form-inline">
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(s => s.Email)
+        </div>
+        <div>
+            @Html.TextBoxFor(s => s.Email, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group left-padding">
+        <div>
+            @Html.LabelFor(s => s.MobilePhone)
+        </div>
+        <div>
+            @Html.TextBoxFor(s => s.MobilePhone, new { @class = "form-control" })
+        </div>
+    </div>
+</div>

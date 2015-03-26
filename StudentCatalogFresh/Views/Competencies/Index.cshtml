@@ -1,0 +1,44 @@
+﻿@model IEnumerable<StudentCatalogFresh.Models.Competency>
+
+@{
+    ViewBag.Title = "Competencies";
+}
+
+<div class="col-md-3 col-sm-2 col-xs-1">
+
+</div>
+<div class="col-md-6 col-sm-8 col-xs-10">
+    
+    <h2>Competencies</h2>
+
+    <p>
+        <a href="@Url.Action("Create", "Competencies")"><i class="glyphicon glyphicon-plus plus"></i></a>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompetencyHeader.Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var competency in Model)
+        {
+            <tr class="bottom">
+                <td>
+                    <div class="header-text">@Html.DisplayFor(modelItem => competency.CompetencyHeader.Name)</div>
+                    <br/>
+                    <a href="@Url.Action("Edit", "Competencies", new {id = competency.CompetencyId})">
+                        @Html.DisplayFor(modelItem => competency.Name)
+                    </a>
+                </td>
+                <td class="text-right">
+                    <a href="@Url.Action("Delete", "Competencies", new {id = competency.CompetencyId})">
+                        <i class="glyphicon glyphicon-trash trash-down"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

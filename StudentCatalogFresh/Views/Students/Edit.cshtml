@@ -1,0 +1,33 @@
+﻿@model StudentCatalogFresh.Models.Student
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="col-md-3 col-sm-2 col-xs-1">
+
+</div>
+<div class="col-md-6 col-sm-8 col-xs-10">
+
+    <h2>Edit</h2>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Partial("CreateEditPartial")
+        @Html.HiddenFor(s => s.StudentId)
+
+        <p />
+        <div class="form-inline">
+            <div class="form-group">
+                <input class="image" type="file" name="image" />
+            </div>
+        </div>
+        <p />
+        <div>
+            <div class="btn-right">
+                <a class="btn btn-default" href="@Url.Action("Index", "Students")">Cancel</a>
+                <input class="btn btn-primary" type="submit" value="Save" />
+            </div>
+        </div>
+    }
+    </div>

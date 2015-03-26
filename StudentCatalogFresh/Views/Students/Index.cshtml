@@ -1,0 +1,158 @@
+﻿@using StudentCatalogFresh.Models
+@model StudentCatalogFresh.ViewModels.StudentIndexViewModel
+
+@{
+    ViewBag.Title = "Students";
+}
+
+<div class="modal" id="competencies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="btn-competencies">
+                    <a href="#" data-dismiss="modal">
+                        <i class="glyphicon glyphicon-minus drop-button-icon"></i><br />
+                        <h4 class="drop-button-text">Competencies</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    @foreach (CompetencyHeader competencyHeader in @Model.CompetencyHeaders)
+                    {
+                        <div class="col-sm-4 col-xs-6">
+                            <i class="glyphicon glyphicon-plus plus-fold"></i><label class="checkbox-inline bold">@competencyHeader.Name</label><input class="checkbox-inline" type="checkbox" name="@competencyHeader.CompetencyHeaderId" />
+                            @*<input class="checkbox-inline" type="checkbox" name="@competencyHeader.CompetencyHeaderId"/>*@
+                        </div>
+                        
+                        @* foreach (Competency competency in competencyHeader.Competencies)
+                        {
+                            @competency.Name
+                        }*@
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-3 hidden-xs">
+            <h3>Students</h3>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-4">
+                <i class="glyphicon glyphicon-minus drop-button-icon"></i><br/>
+                <h4 class="drop-button-text">Department overview</h4>
+            </div>
+            <div class="col-xs-4">
+                <a href="#" data-toggle="modal" id="select_competencies" data-target="#competencies">
+                    <i class="glyphicon glyphicon-minus drop-button-icon"></i><br/>
+                    <h4 class="drop-button-text">Competencies</h4>
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <i class="glyphicon glyphicon-minus drop-button-icon"></i><br/>
+                <h4 class="drop-button-text">Search</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row visible-xs">
+        <div class="col-xs-12">
+            <h3>Students</h3>
+        </div>
+        <div class="col-xs-12">
+            <a href="@Url.Action("Create", "Students")"><i class="glyphicon glyphicon-plus plus"></i></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 hidden-xs">
+            <a href="@Url.Action("Create", "Students")"><i class="glyphicon glyphicon-plus plus-right"></i></a>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+
+            @foreach (Student student in @Model.Students)
+            {
+                <div class="col-xs-4 col-md-3">
+                    <a href="@Url.Action("Delete", "Students", new {id = student.StudentId})">
+                        <i class="glyphicon glyphicon-trash trash-overlay"></i>
+                    </a>
+                    <a href="@Url.Action("Edit", "Students", new {id = student.StudentId})">
+                        <img class="image-box" src="../../@student.ProfileImagePath"/><br/>
+                        <div class="image-text">
+                            @student.Firstname @student.Lastname / <br/>
+                            @student.Email
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*
+    @using StudentCatalogFresh.Models
+    @model StudentCatalogFresh.ViewModels.StudentIndexViewModel
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(@Model.Students => Model.Students.ProfileImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentsFirstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobilePhone)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model.Students) {
+        <tr>
+            <td>
+                <img src="../../@item.ProfileImagePath" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobilePhone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.StudentId}) |
+                @Html.ActionLink("Details", "Details", new {id = item.StudentId}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.StudentId})
+            </td>
+        </tr>
+    }
+
+    </table>
+*@
+

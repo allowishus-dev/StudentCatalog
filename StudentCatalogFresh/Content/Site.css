@@ -1,0 +1,134 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.image-text {
+    position: relative;
+    color: white;
+    top: -40px;
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 131px;
+    padding-left: 3px;    
+}
+
+.image-box {
+    height: 190px;
+    width: 131px;
+}
+
+.plus-right {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333333;
+    float: right;
+    left: 20px;
+    top: 12px;
+
+}
+
+.plus-fold {
+    font-size: 14px;
+    top: 3px;
+    margin-right: -18px;
+}
+
+.plus {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.trash-overlay {
+    color: lightgray;
+    margin-left: 111px;
+    top: 26px;
+}
+
+.trash {
+    color: #333333;
+}
+
+.trash-down {
+    color: #333333;
+    margin-top: 6px;
+}
+
+.drop-button-text {
+    margin-top: -10px;
+    margin-left: 4px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-transform: uppercase;
+}
+
+.drop-button-text2 {
+    margin-top: -10px;
+    margin-left: 4px;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-transform: uppercase;
+}
+
+.drop-button-icon {
+    font-size: 26px;
+    color: #333333;
+}
+
+.modal-backdrop
+{
+    opacity:0.0 !important;
+}
+.modal-content {
+    opacity: 0.8;
+    left: 94px;
+    top: 4px;
+    /*width: 350px;*/
+}
+
+.btn-competencies {
+    /*text-align: center;*/
+    margin-left: 200px
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn-submit {
+    margin-left: 144px;
+}
+
+.header-text {
+    font-size: 10px;
+    margin-bottom: -24px;
+}
+
+.btn-right {
+    margin-left: 210px;
+}
